@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Candiadte Details</title>
+</head>
+<table border="1">
+<thead>
+<tr>
+    <th>Name</th>
+    <th>email</th>
+    <th>Contact</th>
+    <th>college</th>
+    <th>hobbies</th>
+    <th>gender</th>
+     <th>Edit </th>
+     <th>Delete </th>
+
+</tr>
+</thead>
+<tbody>
+{% for i in d %}
+<tr><td>{{ i.name }}</td>
+    <td>{{ i.email }}</td>
+    <td>{{ i.phone }}</td>
+    <td>{{ i.college }}</td>
+    <td>{{ i.hobbies }}</td>
+    <td>{{ i.gender }}</td>
+    <td><a href="{% url 'edit' i.id %}">Edit</a> </td>
+    <td><a href="{% url 'delete' i.id %}">Delete</a> </td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</html>
